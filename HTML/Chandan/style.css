@@ -11,7 +11,7 @@ body{
 
 }
 h1{
-    color: darkolivegreen;
+    color: black;
 }
 .logo{
     width : 50px;
@@ -23,8 +23,10 @@ h1{
     align-items: center;
     flex-direction: row;
     padding: 10px;
-    background-color: rgb(255, 204, 153);
-    position: sticky;
+    background-color: goldenrod;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 .links ul li{
     list-style: none;
@@ -33,7 +35,7 @@ h1{
 }
 .links ul li:hover{
     color: darkolivegreen;
-    transition: .5s;
+    transition: .3s;
     transform: scale(1.1);
 }
 #nav .links ul a{
@@ -74,6 +76,16 @@ h1{
     color: white;
     transition: .5s;
 }
+#cart{
+    margin-left: 10px;
+}
+#item_count{
+    margin-left: 5px;
+    color: darkolivegreen;
+}
+#cart:hover{
+    cursor: pointer;
+}
 
 
 .msg::before{
@@ -90,10 +102,11 @@ h1{
     opacity: 0.3;
 }
 
-#menu{
-    padding: 11em;
-    font-size: 1.5em;
-    background-color: whitesmoke;
+#menu table td h6{
+    color : rgb(232, 64, 3);
+    display: inline;
+    font-size: 15px;
+    font-family: arial;
 }
 .msg{
     height: 80vh;
@@ -143,28 +156,52 @@ h1{
 
 #menu table{
    padding: 20px;
-   border: 1px solid black;
+   border: none;
    margin: auto;
    width: 35em;
 }
 #menu{
     height: 80vh;
     padding: 5em;
-    background:rgb(255, 204, 153);
+    font-size: 1.5em;
+    background:rgba(255, 204, 153, 0.775);
 }
-#menu h1{
-    margin-top: 0px;
-}
+
 #menu table td{
     font-family: monospace;
+    border: none;
 }
+#menu table th{
+    text-align: left;
+    border: 1px solid darkolivegreen;
+    background-color: darkolivegreen;
+    color: white;
+    padding: 5px;
+    font-size: .7em;
+}
+
+#menu table button{
+    background: darkolivegreen;
+    color: white;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+#menu table .rm{
+    color: white;
+    background: rgb(238, 94, 94);
+    border: none;
+}
+
 #mealSel{
     background: none;
     height: 80vh;
 }
 #mealSel h1{
     color: white;
-    margin-top: 13px;
+    margin-top: 50px;
 }
 .menuItem img{
     height: 200px;
@@ -207,11 +244,27 @@ h1{
     color : white;
     display: block;
     margin: auto;
+    height: 5em;
     text-align: center;
+    margin-bottom: 25px;
+    font-family: monospace;
+    font-size: 1.5em;
+}
+#with{
+    width: 50px;
+    height: 100px;
+    display: block;
+    margin: auto;
+}
+h3{
+    margin-top: 50px;
+    text-align: center;
+    color: yellow;
 }
 #footer{
     background: rgb(255, 204, 153);
     height: 20vh;
+    margin-top: 15em;
 }
 #footer h2{
     padding: 10px;
@@ -227,7 +280,8 @@ h1{
     padding: 10px;
     background: rgb(236, 179, 122);
     font-family: monospace;
-    font-size: 1.1em;
+    font-size: 1.3em;
+    text-align: center;
 }
 .links{
     display: flex;
@@ -251,6 +305,7 @@ h1{
     color: white;
     display: inline-block;
 }
+
 .scroller a{
     text-decoration: none;
     color: black;

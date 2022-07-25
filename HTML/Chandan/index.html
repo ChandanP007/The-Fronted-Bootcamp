@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jomino's Pizza</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="script" href="script.js" class="script">
+    
 </head>
+
 <body>
 
     <!-- Navigation Section  -->
     <div id="nav">
-        <div class="logo"><img src="images/pizza.png" alt="" srcset=""></div>
+        <div class="logo"><img src="images/logo.png" alt="" srcset=""></div>
         <div class="cmpName"><h1>Jomino's Pizza</h1></div>
         <div class="links">
             <ul>
@@ -26,9 +27,11 @@
         <div class="user">
             <button>SignUp</button>
         </div>
+        <a onclick='disp()'><img id="cart" src="images/cart.png"></a>
+        <h4 id="item_count">1</h4>
     </div>
 
-    <div class="msg">
+    <div id="home" class="msg">
         <h2>Upto 60% OFF 
             | Order Now </h2>
     </div>
@@ -36,76 +39,80 @@
 
     <!-- Menu Section  -->
     <div id="menu">
-        <h1 align="center">Our Servings</h1>
+        <h1 align="center">What we Serve ? </h1>
         <table cellspacing="15px" border="10">
             <th>Chef's Kitchen</th>
             <th>Price</th>
             <tr>
-                <td>Margarita</td>
+                <td>Margarita<h6>*Best Seller</h6></td>
                 <td>350.00</td>
+                <td><button onclick='addtoCart()' type="submit" class="ad">+</button><button onclick='rmCart()' class="rm" type="submit">-</button></td>
             </tr>
             <tr>
                 <td>Paperonni Pizza</td>
                 <td>400.00</td>
+                <td><button onclick='addtoCart()' type="submit" class="ad">+</button><button onclick='rmCart()' class="rm" type="submit">-</button></td>
             </tr>
             <tr>
                 <td>Peppy Paneer</td>
                 <td>450.00</td>
+                <td><button onclick='addtoCart()' type="submit" class="ad">+</button><button onclick='rmCart()' class="rm" type="submit">-</button></td>
             </tr>
             <tr>
                 <td>Margarita</td>
                 <td>350.00</td>
+                <td><button onclick='addtoCart()' type="submit" class="ad">+</button><button onclick='rmCart()' class="rm" type="submit">-</button></td>
             </tr>
             <tr>
                 <td>Paperonni Pizza</td>
                 <td>400.00</td>
+                <td><button onclick='addtoCart()' type="submit" class="ad">+</button><button onclick='rmCart()' class="rm" type="submit">-</button></td>
             </tr>
             <tr>
                 <td>Peppy Paneer</td>
                 <td>450.00</td>
+                <td><button onclick='addtoCart()' type="submit" class="ad">+</button><button onclick='rmCart()' class="rm" type="submit">-</button></td>
             </tr>
             <tr>
                 <td>Margarita</td>
                 <td>350.00</td>
+                <td><button onclick='addtoCart()' type="submit" class="ad">+</button><button onclick='rmCart()' class="rm" type="submit">-</button></td>
             </tr>
             <tr>
                 <td>Paperonni Pizza</td>
                 <td>400.00</td>
+                <td><button onclick='addtoCart()' type="submit" class="ad">+</button><button onclick='rmCart()' class="rm" type="submit">-</button></td>
             </tr>
             <tr>
                 <td>Peppy Paneer</td>
                 <td>450.00</td>
+                <td><button onclick='addtoCart()' type="submit" class="ad">+</button><button onclick='rmCart()' class="rm" type="submit">-</button></td>
             </tr>
             <tr>
                 <td>Margarita</td>
                 <td>350.00</td>
+                <td><button onclick='addtoCart()' type="submit" class="ad">+</button><button onclick='rmCart()' class="rm" type="submit">-</button></td>
             </tr>
-            <tr>
-                <td>Paperonni Pizza</td>
-                <td>400.00</td>
-            </tr>
-            <tr>
-                <td>Peppy Paneer</td>
-                <td>450.00</td>
-            </tr>
+            
         </table>
     </div>
 
     <!-- Meal Selection -->
     <div id="mealSel"><hr> 
-    <h1 align="center">Select Your Meal</h1>
-    <form name="formMenu"></form>
-    <select name="menu" id="opt" onchange="getFood()">
-        <option value="0">--Select Meal--</option>
-        <option value="1">Margarita</option>
-        <option value="2">Paperonni Pizza</option>
-        <option value="3">Peppy Paneer</option>
+    <h1 align="center">Choose Our Best Meals</h1>
+    <select name="menu" id="opt">
+        <option value="0" selected>--Select Meal--</option>
+        <option value="Margerita : 350.00">Margarita</option>
+        <option value="Paperoni Pizza : 400.00">Paperonni Pizza</option>
+        <option value="Peppy Paneer : 450.00">Peppy Paneer</option>
+        <option value="Farmhouse Special : 550.00">Farmhouse Special</option>
     </select>
-    <label id="selected">Margerita</label>
     <div class="menuItem">
-    <img src="images/pizza.png">
+        <img id="pizImg" src="images/pizza.png">
     </div>
-        
+    
+    <h3>You've Selected Nothing</h3>
+    <label id="selected"></label>
         <div class="submitBtn">
         <button>Order Now</button>
         </div>
@@ -116,16 +123,18 @@
     <div id="footer">
         <h2>Social Links :</h2>
         <div class="links">
-            <img src="images/facebook.png" alt="facebook" srcset=""></a>
-            <img src="images/instagram.png" alt="facebook" srcset=""></a>
-            <img src="images/whatsapp.png" alt="facebook" srcset=""></a>
+            <a href="https://www.facebook.com/chandanp007/"><img src="images/facebook.png" alt="facebook" srcset=""></a>
+            <a href="https://instagram.com/_chandan.pandey_"><img src="images/instagram.png" alt="instagram" srcset=""></a>
+            <a href="#"><img src="images/whatsapp.png" alt="whatsapp" srcset=""></a>
+            <a href="https://github.com/ChandanP007"><img src="images/github.png" alt="github" srcset=""></a>
+            <a href="https://twitter.com/chp_145"><img src="images/twitter.png" alt="twitter" srcset=""></a>
         </div>
         <div class="scroller">
-            <a href="#nav">^</a>
+            <a href="#home">^</a>
         </div>
-        <h4>Created By Chandan Pandey</h4>
+        <h4>Created By Chandan Pandey | With Love ❤️ </h4>
     </div>
 
-
+<script src="script.js"></script>;
 </body>
 </html>
